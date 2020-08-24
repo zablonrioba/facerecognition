@@ -1,0 +1,30 @@
+
+<head>
+    <meta charset="UTF-8">
+    <title>recognize</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='lodash.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='immutable.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='axios.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
+   <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <form class="form-group" method="POST" id="recognize">
+            <div class="message">
+                <p class="success">Training process is done</p>
+            </div>
+            <p class="description">Upload a face image to be Recognize</p>
+            <div class="form-group col-md-6">
+                <label >image</label>
+                <input type="file" class="form-control" name="file" id="recognize-input-file" accept="image/*"/>
+            </div>
+            <div class="form-action">
+                <button type="submit">recognize it</button>
+            </div>
+        </form>
+    </div>
+
+</body>
