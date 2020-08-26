@@ -1,5 +1,5 @@
 from flask import Flask, json, Response, request, render_template, url_for, redirect, flash
-from flask_login import login_manager
+# from flask_login import login_manager
 from werkzeug.utils import secure_filename
 from werkzeug.security import  generate_password_hash, check_password_hash
 from os import path, getcwd
@@ -63,6 +63,11 @@ def delete_user_by_id(user_id):
 def page_home():
     return render_template('nav.html')
 
+# route to train form
+@app.route('/reg', methods=["GET"])
+def reg():
+    return render_template('reg.html')
+
 
 @app.route('/api', methods=['GET'])
 def homepage():
@@ -88,7 +93,7 @@ def login():
             for pass_word in passworddata:
                 if check_password_hash(pass_word, password):
                     print(output2)
-                    return redirect(url_for('homepage'))
+                    return redirect(url_for('reg'))
                 else:
                     return error_handle("password do not match")
     return render_template('log.html')
@@ -128,11 +133,11 @@ def train():
             name = request.form['name']
             second_name = request.form['second_name']
             national_id = request.form['nat_id']
-            parents =request.form["parent"]
-            DOB =request.form["Date_of_birth"]
-            place_birth =request.form["place_birth"]
+            parents = request.form["parent"]
+            DOB = request.form["Date_of_birth"]
+            place_birth = request.form["place_birth"]
             location = request.form["location"]
-            phone =request.form["phone"]
+            phone = request.form["phone"]
             gender = request.form['gender']
             print("info of file", name)
             print("file is allowed and saved in ", app.config['storage'])
