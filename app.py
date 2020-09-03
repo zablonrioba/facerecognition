@@ -61,7 +61,14 @@ def delete_user_by_id(user_id):
 # route to home page
 @app.route('/', methods=["GET"])
 def page_home():
-    return render_template('nav.html')
+    return render_template('home.html')
+
+# route to person list
+@app.route('/person', methods=["GET", "POST"])
+def personlist():
+    if request.method == 'GET':
+        results = app.db.select("SELECT * FROM users").fetchall()
+    return render_template('personlist.html', results=results)
 
 # route to train form
 @app.route('/reg', methods=["GET"])

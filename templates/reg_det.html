@@ -1,11 +1,13 @@
+{% extends "nav.html" %}
+{% block content %}
 
-    <head>
-        <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-     <script src="{{ url_for('static', filename='app4.js')}}"></script>
-    </head>
-    <body>
+<!--    <head>-->
+<!--        &lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--     <script src="{{ url_for('static', filename='app4.js')}}"></script>-->
+<!--    </head>-->
+    <div>
         <div>
             <form action="{{ url_for('login')}}" method="post" id="register">
                 <div class="container">
@@ -40,6 +42,6 @@
             </form>
         </div>
 
-  </body>
+  </div>
+{% endblock %}
 
-</html>

@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body class="container ">
+
+            <div class="jumbotron">
+              <h1 class="display-4 text-center">Face recognition</h1>
+                <div class="row text-center">
+                  <div class="col-lg-4 col-6 px-0 rounded mx-auto d-block"><img class="img-thumbnail img-fluid" src="https://images.readwrite.com/wp-content/uploads/2019/11/Facial-Recognition-%E2%80%93-Shaping-the-future-of-Identity-Verification-Market-825x500.jpg" alt=""></div>
+                </div>
+<!--              <hr class="my-4">-->
+
+                    <form method="post">
+                          <div class="form-group">
+                            <label for="cert_id">certfication number</label>
+                            <input type="text" class="form-control" id="cert_id" name="cert_id">
+                          </div>
+                          <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" name="password" id="password">
+                          </div>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                      <a class="btn btn-primary btn-lg" href="{{ url_for('register_detective')}}" role="button">sign up</a>
+
+
+            </div>
+
+
+    </body>
+</html>

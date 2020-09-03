@@ -1,16 +1,17 @@
-
-<head>
-    <meta charset="UTF-8">
-    <title>recognize</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='lodash.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='immutable.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='axios.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
-   <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
-</head>
-<body>
+{% extends "nav.html" %}
+{% block content %}
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>recognize</title>-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--    <script type="text/javascript" src="{{ url_for('static', filename='lodash.js') }}"></script>-->
+<!--    <script type="text/javascript" src="{{ url_for('static', filename='immutable.js') }}"></script>-->
+<!--    <script type="text/javascript" src="{{ url_for('static', filename='axios.js') }}"></script>-->
+<!--    <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>-->
+<!--   <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>-->
+<!--</head>-->
+<div>
     <div class="container">
         <form class="form-group" method="POST" id="recognize">
             <div class="message">
@@ -27,4 +28,5 @@
         </form>
     </div>
 
-</body>
+</div>
+{% endblock %}
