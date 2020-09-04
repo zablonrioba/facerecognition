@@ -4,6 +4,7 @@ from werkzeug.utils import secure_filename
 from werkzeug.security import  generate_password_hash, check_password_hash
 from os import path, getcwd
 import time
+from datetime import date
 from database import Database
 from face_rec import Face
 
@@ -59,9 +60,29 @@ def delete_user_by_id(user_id):
 
 
 # route to home page
-@app.route('/', methods=["GET"])
+@app.route('/', methods=["GET", "POST"])
 def page_home():
+    output2 = json.dumps({"login": True})
+    if request.method == 'POST':
+        cert_num = request.form.get('cert_id')
+        password = request.form.get('password')
+
+        usernamedata = app.db.select('SELECT reg_user.username FROM reg_user  WHERE  reg_user.username =?',
+                                     [cert_num]).fetchone()
+        passworddata = app.db.select('SELECT reg_user.password FROM reg_user  WHERE  reg_user.username =?',
+                                     [cert_num]).fetchone()
+
+        if usernamedata is None:
+            return error_handle("user does not exist")
+        else:
+            for pass_word in passworddata:
+                if check_password_hash(pass_word, password):
+                    print(output2)
+                    return redirect(url_for('reg'))
+                else:
+                    return error_handle("password do not match")
     return render_template('home.html')
+
 
 # route to person list
 @app.route('/person', methods=["GET", "POST"])
@@ -70,10 +91,17 @@ def personlist():
         results = app.db.select("SELECT * FROM users").fetchall()
     return render_template('personlist.html', results=results)
 
+
 # route to train form
 @app.route('/reg', methods=["GET"])
-def reg():
+def rec():
     return render_template('reg.html')
+
+
+# route to rec form
+@app.route('/rec', methods=["GET"])
+def reg():
+    return render_template('rec.html')
 
 
 @app.route('/api', methods=['GET'])

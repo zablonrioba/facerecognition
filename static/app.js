@@ -196,6 +196,7 @@ $(document).ready(function(){
 
 
         }
+        window.location.href=window.location.href;
 
         update();
         event.preventDefault();

@@ -1,10 +1,10 @@
 $(document).ready(function(){
-    $("#register").submit(function(e){
+    $("#train").submit(function(e){
       e.preventDefault();
 
 
       $.ajax({
-        url: "/register",
+        url: '/api/train',
         type: "POST",
         data: new FormData(this),
         contentType: false,
